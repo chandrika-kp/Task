@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.navbar{
+  background-color: #6D6AED;
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  background-color: #f8f8f8;
+}
+.nav-item{
+  padding-right:20px ;
+}
+
+.sideBlock {
+  display: block;
+  width: 25%;
+  margin: 2em;
+  border: 1px solid #EEE;
+  border-radius: 6px;
+  padding: 23px;
+  background: #fff;
+  height: 60%;
+  margin-top: 6em;
+}
+
+
+.jobCardBlock {
+  margin: 2em;
+  width: 75%;
+  /* flex-flow: column;
+  overflow-y: auto; */
+  /* max-height: 50rem;  */
+}
+
+.eachJob {
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 24px;
+  box-shadow: 0 0 4px rgba(72, 72, 72, .12), 0 2px 2px rgba(72, 72, 72, .08);
+  border-radius: 8px;
+
+}
+
+.jobTitle {
+  color: #484848;
+}
+
+.NoMatch {
+  background: #fff;
+  padding: 24px 24px 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 4px rgba(72, 72, 72, .12), 0 2px 2px rgba(72, 72, 72, .08);
+  border-radius: 8px;
+  color: red;
+  height: 10em;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sideBlock,
+  .jobCardBlock {
+    width: 100%;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
