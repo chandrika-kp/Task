@@ -12,10 +12,13 @@
 
 .container {
   display: flex;
-  background-color: #f8f8f8;
 }
 .nav-item{
   padding-right:20px ;
+}
+
+.home{
+  /* height: 0vh; */
 }
 
 .sideBlock {
@@ -26,8 +29,7 @@
   border-radius: 6px;
   padding: 23px;
   background: #fff;
-  height: 60%;
-  margin-top: 6em;
+  height: 100vh;
 }
 
 
@@ -72,7 +74,37 @@
   .jobCardBlock {
     width: 100%;
   }
+  .box{
+    flex-direction: column;
+  }
 }
+
+
+/* @media only screen and (min-width: 470px) {
+  .box{
+    flex-direction: column;
+  }
+} */
+
+
+.btn {
+  background-color: transparent;
+  /* margin:0 0.75rem; */
+  color:rgb(0, 0, 0); 
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border: 1px solid rgb(63, 63, 225); 
+  border-color: rgb(255, 255, 255); 
+  border-radius: 0.25rem; 
+  background-color: #fff;
+}
+
+.btn:hover {
+  background-color: rgb(108, 170, 203);
+  border-color: transparent;
+}
+
 
 @tailwind base;
 @tailwind components;

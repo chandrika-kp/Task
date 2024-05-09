@@ -8,6 +8,7 @@ import JobListing from './components/JobListing';
 import JobDetails from './components/JobDetails';
 import Application from './components/Application';
 import Error from './components/Error';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/apply" element={<Application />} />
           <Route path='*' element={<Error/>} />
         </Routes>
+      <Footer/> 
       </BrowserRouter>
     </>
   );

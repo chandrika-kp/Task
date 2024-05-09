@@ -7,5 +7,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  // screens: {
+  //   'tall': { 'raw': '(min-height: 800px)' }}
 }
 

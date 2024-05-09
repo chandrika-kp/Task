@@ -1,40 +1,44 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { IoMdMenu } from "react-icons/io";
 
 export const Navbar = () => {
+    const navigation = [
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Career', href: '/career' },
+    ]
+
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     return (
         <>
-            <nav className="navbar navbar-expand-lg ">
-                <div className="container-fluid">
-                    <div className="d-flex align-items-center">
-                        <NavLink className="navbar-brand" to="#">The Sengupta Laboratory</NavLink>
+            <nav className="navbar flex items-center justify-between p-6 lg:px-8 text-white" aria-label="Global">
+                <div className="flex lg:flex-1">
+                    <div className="flex items-center">
+                        <NavLink className="navbar-brand text-bold" to="/">The Sengupta Laboratory</NavLink>
                     </div>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                </div>
+                <div className="flex lg:hidden">
+                    <button
+                        type="button"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        <span className="sr-only">Toggle menu</span>
+                        <IoMdMenu className="h-6 w-6" aria-hidden="true" />
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center w-100">
-                            <li className="nav-item">
-                                <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">About</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/career">Career</NavLink>
-                            </li>
-                            {/* <li className="nav-item">
-                                <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                            </li> */}
-                        </ul>
-                        {/* <div >
-                            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <NavLink className="nav-link active" aria-current="page" to="/login">Login</NavLink>
-                                </li>
-                            </ul>
-                        </div> */}
-                    </div>
+                </div>
+                <div className={`lg:flex lg:gap-x-12 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+                    {navigation.map((item) => (
+                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white flex flex-col">
+                            {item.name}
+                        </a>
+                    ))}
+                </div>
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="/" className="text-sm font-semibold leading-6 text-white">
+                        Log in <span aria-hidden="true">&rarr;</span>
+                    </a>
                 </div>
             </nav>
         </>
