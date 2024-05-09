@@ -5,15 +5,37 @@ const Application = require('../Models/applicationModel');
 // POST route to submit an application
 router.post('/', async (req, res) => {
     try {
-        const { jobTitle, name, email } = req.body;
-        // Add more fields as needed
+        const {
+            jobTitle,
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            experience,
+            portfolioURL,
+            currentCompanyName,
+            currentCTC,
+            expectedCTC,
+            jobLocation,
+            jobType,
+            previousExperiences
+        } = req.body;
 
         // Create a new application document
         const newApplication = new Application({
             jobTitle,
-            name,
+            firstName,
+            lastName,
             email,
-            // Add more fields as needed
+            phoneNumber,
+            experience,
+            portfolioURL,
+            currentCompanyName,
+            currentCTC,
+            expectedCTC,
+            jobLocation,
+            jobType,
+            previousExperiences
         });
 
         // Save the application to the database

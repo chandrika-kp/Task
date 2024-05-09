@@ -5,7 +5,11 @@ const applicationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    name: {
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
         type: String,
         required: true,
     },
@@ -13,6 +17,33 @@ const applicationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    phoneNumber: {
+        type: String,
+    },
+    experience: {
+        type: Number,
+    },
+    portfolioURL: {
+        type: String,
+    },
+    currentCompanyName: {
+        type: String,
+    },
+    currentCTC: {
+        type: String,
+    },
+    expectedCTC: {
+        type: String,
+    },
+    jobLocation: {
+        type: [String],
+    },
+    jobType: {
+        type: [String],
+    },
+    previousExperiences: {
+        type: String,
+    }
 }, { timestamps: true });
 
 const Application = mongoose.model('Application', applicationSchema);
